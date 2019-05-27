@@ -3,8 +3,8 @@ package=librustzcash
 $(package)_download_path=https://github.com/omershlo/$(package)/archive/
 $(package)_file_name=$(package)-$($(package)_git_commit).tar.gz
 $(package)_download_file=$($(package)_git_commit).tar.gz
-$(package)_sha256_hash=9806652b1627f3dbea03527fa678659ec3dc78636112b9adfe75d319b2858889
-$(package)_git_commit=03b724c94b227d7b99bcabfa3ffc5a65dc76da20
+$(package)_sha256_hash=b6de27bf77e6730d48cfd7e800ec96600074df8d96ba6124ae2836ef70a26121
+$(package)_git_commit=ad0a46b0ebee8393708a6d8a85824a21bc2d39cc
 $(package)_dependencies=rust $(rust_crates)
 $(package)_patches=cargo.config
 

@@ -1,10 +1,10 @@
 package=librustzcash
-#$(package)_version=0.1
+$(package)_version=0.1
 $(package)_download_path=https://github.com/omershlo/$(package)/archive/
 $(package)_file_name=$(package)-$($(package)_git_commit).tar.gz
 $(package)_download_file=$($(package)_git_commit).tar.gz
-$(package)_sha256_hash=4295d65f4ca5b02fda34391fc9821629e6b9f28fd375c1338f7a483678effde0
-$(package)_git_commit=d9b5150dd806b348c9389e08ed10d47241000bf4
+$(package)_sha256_hash=a197f924ddd298ebe52a01fca74864e2600530700e8f09c7bf6bd807743966d1
+$(package)_git_commit=235c433f15b8b4cbfafda6d77dccd659f1b84b22
 $(package)_dependencies=rust $(rust_crates)
 $(package)_patches=cargo.config
 
@@ -32,5 +32,5 @@ define $(package)_stage_cmds
   mkdir $($(package)_staging_dir)$(host_prefix)/lib/ && \
   mkdir $($(package)_staging_dir)$(host_prefix)/include/ && \
   cp $($(package)_library_file) $($(package)_staging_dir)$(host_prefix)/lib/ && \
-  cp include/librustzcash.h $($(package)_staging_dir)$(host_prefix)/include/
+  cp librustzcash/include/librustzcash.h $($(package)_staging_dir)$(host_prefix)/include/
 endef

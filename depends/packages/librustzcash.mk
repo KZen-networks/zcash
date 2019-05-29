@@ -3,8 +3,8 @@ $(package)_version=0.1
 $(package)_download_path=https://github.com/omershlo/$(package)/archive/
 $(package)_file_name=$(package)-$($(package)_git_commit).tar.gz
 $(package)_download_file=$($(package)_git_commit).tar.gz
-$(package)_sha256_hash=9e60ec99bf5678a30f59f9a36a20c9a68c844fce4f4c75fa9e40e514e709d0fe
-$(package)_git_commit=d76fb12fe65d6f52bc9235bb034ddbdcc27153ce
+$(package)_sha256_hash=15fd0083182e93e3ba783a783c24c6c9680390164fe3eabd0909e3e39be17575
+$(package)_git_commit=2d15784fd52ec095c861e44f30aa214d063869ad
 $(package)_dependencies=rust $(rust_crates)
 $(package)_patches=cargo.config
 

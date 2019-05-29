@@ -31,7 +31,8 @@ rust_crates := \
   crate_typenum \
   crate_winapi_i686_pc_windows_gnu \
   crate_winapi \
-  crate_winapi_x86_64_pc_windows_gnu
+  crate_winapi_x86_64_pc_windows_gnu \
+  crate_serde_json
 rust_packages := rust $(rust_crates) librustzcash
 proton_packages := proton
 zcash_packages := libgmp libsodium

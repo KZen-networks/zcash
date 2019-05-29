@@ -25,6 +25,7 @@ define $(package)_preprocess_cmds
 endef
 
 define $(package)_build_cmds
+  cargo update 
   cargo build $($(package)_build_opts)
 endef
 

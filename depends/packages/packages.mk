@@ -32,6 +32,13 @@ rust_crates := \
   crate_winapi_i686_pc_windows_gnu \
   crate_winapi \
   crate_winapi_x86_64_pc_windows_gnu \
+  crate_serde \
+  crate_serde_derive \
+  crate_sha3 \
+  crate_zeroize \
+  crate_subtle \
+  crate_itoa \
+  crate_ryu \
   crate_serde_json 
 rust_packages := rust $(rust_crates) librustzcash
 proton_packages := proton

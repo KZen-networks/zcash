@@ -39,6 +39,10 @@ rust_crates := \
   crate_subtle \
   crate_itoa \
   crate_ryu \
+  crate_proc_macro2 \
+  crate_quote \
+  crate_syn \
+  crate_unicode_xid \
   crate_serde_json 
 rust_packages := rust $(rust_crates) librustzcash
 proton_packages := proton

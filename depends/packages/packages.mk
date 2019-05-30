@@ -36,7 +36,6 @@ rust_crates := \
   crate_serde_derive \
   crate_sha3 \
   crate_zeroize \
-  crate_subtle \
   crate_itoa \
   crate_ryu \
   crate_proc_macro2 \

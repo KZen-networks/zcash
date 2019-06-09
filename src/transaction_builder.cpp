@@ -19,7 +19,7 @@ SpendDescriptionInfo::SpendDescriptionInfo(
     uint256 anchor,
     SaplingWitness witness) : expsk(expsk), note(note), anchor(anchor), witness(witness)
 {
-    librustzcash_sapling_generate_r(alpha.begin());
+    librustzcash_sapling_generate_alpha(alpha.begin());
 }
 
 TransactionBuilderResult::TransactionBuilderResult(const CTransaction& tx) : maybeTx(tx) {}
@@ -219,7 +219,6 @@ TransactionBuilderResult TransactionBuilder::Build()
     if (change < 0) {
         return TransactionBuilderResult("Change cannot be negative");
     }
-    std::cout << "start build" << std::endl;
     //
     // Change output
     //
@@ -248,7 +247,6 @@ TransactionBuilderResult TransactionBuilder::Build()
             return TransactionBuilderResult("Could not determine change address");
         }
     }
-std::cout << " build 1" << std::endl;
     //
     // Sapling spends and outputs
     //
@@ -291,7 +289,6 @@ std::cout << " build 1" << std::endl;
         sdesc.nullifier = *nf;
         mtx.vShieldedSpend.push_back(sdesc);
     }
-std::cout << " build 2" << std::endl;
 
     // Create Sapling OutputDescriptions
     for (auto output : outputs) {
@@ -337,7 +334,6 @@ std::cout << " build 2" << std::endl;
             encryptor);
         mtx.vShieldedOutput.push_back(odesc);
     }
-std::cout << " build 3" << std::endl;
 
     //
     // Sprout JoinSplits
@@ -374,7 +370,6 @@ std::cout << " build 3" << std::endl;
         librustzcash_sapling_proving_ctx_free(ctx);
         return TransactionBuilderResult("Could not construct signature hash: " + std::string(ex.what()));
     }
-std::cout << " build 4" << std::endl;
 
     // Create Sapling spendAuth and binding signatures
     for (size_t i = 0; i < spends.size(); i++) {
@@ -384,14 +379,12 @@ std::cout << " build 4" << std::endl;
             dataToBeSigned.begin(),
             mtx.vShieldedSpend[i].spendAuthSig.data());
     }
-    std::cout << " build 5" << std::endl;
 
     librustzcash_sapling_binding_sig(
         ctx,
         mtx.valueBalance,
         dataToBeSigned.begin(),
         mtx.bindingSig.data());
-std::cout << " build 6" << std::endl;
 
     librustzcash_sapling_proving_ctx_free(ctx);
 
@@ -403,7 +396,6 @@ std::cout << " build 6" << std::endl;
     {
         return TransactionBuilderResult("Failed to create Sprout joinSplitSig");
     }
-std::cout << " build 7" << std::endl;
 
     // Sanity check Sprout joinSplitSig
     if (crypto_sign_verify_detached(
@@ -413,7 +405,6 @@ std::cout << " build 7" << std::endl;
     {
         return TransactionBuilderResult("Sprout joinSplitSig sanity check failed");
     }
-std::cout << " build 8" << std::endl;
 
     // Transparent signatures
     CTransaction txNewConst(mtx);

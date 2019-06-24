@@ -1,10 +1,10 @@
 package=librustzcash
 $(package)_version=0.1
-$(package)_download_path=https://github.com/omershlo/$(package)/archive/
+$(package)_download_path=https://github.com/KZen-networks/$(package)/archive/
 $(package)_file_name=$(package)-$($(package)_git_commit).tar.gz
 $(package)_download_file=$($(package)_git_commit).tar.gz
-$(package)_sha256_hash=0d3483d484e51b7ffe3d03bbab7d2e8aee3fb1695d6c91684efef8588bf8e772
-$(package)_git_commit=9d4c0d09b0dba34577b6399e45c3d4c911abb811
+$(package)_sha256_hash=10f907822ce484a480af14f0bbfe9c0688cd86e78cbc10649005d81aef63a17b
+$(package)_git_commit=58876f1e52613e294204f38afc89980ff68b18a8
 $(package)_dependencies=rust $(rust_crates)
 $(package)_patches=cargo.config
 

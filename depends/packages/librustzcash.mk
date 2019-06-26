@@ -3,8 +3,8 @@ $(package)_version=0.1
 $(package)_download_path=https://github.com/KZen-networks/$(package)/archive/
 $(package)_file_name=$(package)-$($(package)_git_commit).tar.gz
 $(package)_download_file=$($(package)_git_commit).tar.gz
-$(package)_sha256_hash=10f907822ce484a480af14f0bbfe9c0688cd86e78cbc10649005d81aef63a17b
-$(package)_git_commit=58876f1e52613e294204f38afc89980ff68b18a8
+$(package)_sha256_hash=15830bd2c6677ae6eebf9ad77124965366e997fd32ba20d981959e176021b5b0
+$(package)_git_commit=be04cd1428405c26d3e21f008f9b89a462546bc8
 $(package)_dependencies=rust $(rust_crates)
 $(package)_patches=cargo.config
 
